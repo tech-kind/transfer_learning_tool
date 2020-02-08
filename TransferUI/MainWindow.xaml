@@ -1,0 +1,76 @@
+﻿<DMSkin:DMSkinWindow
+        x:Class="TransferUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:DMSkin="clr-namespace:DMSkin;assembly=DMSkin"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransferUI"
+        xmlns:viewmodel ="clr-namespace:TransferUI.ViewModel"
+        Title="Powered by DMSkin"
+        Width="1000"
+        Height="650"
+        MinWidth="380"
+        MinHeight="300"
+        FontSize="16"
+        CaptionBackground="#10000000"
+        CaptionHeight="50"
+        FitSystemWindow="False"
+        Foreground="White"
+        ResizeMode="CanResizeWithGrip"
+        Style="{StaticResource DMSkinWindowStyle}"
+        SystemButtonCloseOverColor="Red"
+        SystemButtonColor="{StaticResource TransparentColor}"
+        SystemButtonForeground="#666666"
+        SystemButtonOverColor="#10000000"
+        SystemButtonSize="50"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Window.DataContext>
+        <viewmodel:MainViewModel />
+    </Window.DataContext>
+    <DMSkin:DMSkinWindow.TitleContent>
+        <Grid Background="#33FFFFFF">
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock
+                    Margin="10,0,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Foreground="#666666"
+                    Text="Transfer Learning Tool" />
+            </StackPanel>
+        </Grid>
+    </DMSkin:DMSkinWindow.TitleContent>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Style="{StaticResource DMScrollViewer}">
+            <StackPanel Background="#F5F5F7">
+                <Button
+                    Height="80"
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="Learning">
+                    <StackPanel Orientation="Vertical" Margin="5, 5">
+                        <Image Source="./images/Learning.png" Width="40"></Image>
+                        <Label Content="Learning" />
+                    </StackPanel>
+                </Button>
+                <Button
+                    Height="80"
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="Inference">
+                    <StackPanel Orientation="Vertical" Margin="5, 5">
+                        <Image Source="./images/Analysis.png" Width="40"></Image>
+                        <Label Content="Inference" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <Frame
+            x:Name="Frame"
+            Grid.Column="1"
+            NavigationUIVisibility="Hidden" />
+    </Grid>
+</DMSkin:DMSkinWindow>
