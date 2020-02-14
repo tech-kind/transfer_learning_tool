@@ -4,7 +4,7 @@
 
 - データセットを選択し、簡単なパラメータを設定するだけで画像の転移学習を行うことができます。
 
-  <img width="500" src="./images/sample1.png"/>
+  ![sample1](.\images\sample1.PNG)
 
 - 現在、使用できるアーキテクチャは以下の4つになります。
 
@@ -15,7 +15,7 @@
 
 - 学習中は、エポックごとの正解率がグラフで表示されます。
 
-  <img width="500" src="./images/sample2.png"/>
+  ![sample2](.\images\sample2.PNG)
 
 - 詳しい使い方はnoteに記事をまとめているので、ご覧ください
 
